@@ -1,0 +1,125 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    overflow: hidden;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #34ccff; 
+    height: 12vh;
+}
+.logo{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #ffffffdd;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+.nav-links{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: #ffffffdd;
+    font-size: 16px;
+    position: relative;
+    transition: all .5s linear;
+}
+.nav-links li a:after {
+    content: ""; 
+    height: 2px;
+    width: 100%; 
+    position: absolute; 
+    background: white; 
+    top: -100px ; 
+    left: 0 ;
+    transition: all .2s linear;
+}
+.nav-links li:hover a:after{
+    top: 0; 
+}
+.burger{
+    display: none;
+}
+.burger div{
+    height: 3px;
+    width: 20px;
+    background-color: #ffffffdd;
+    margin-bottom: 4px; 
+    
+}
+
+.info{
+    border: 1px solid rgba(0 , 0 , 0 , .6); 
+    padding: 20px;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .nav-links{
+        width: 50%;
+        font-size: 14px
+    }
+    .info h1{
+        font-size: 1.3rem;
+    }
+    .info p{
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-links{
+        position: absolute;
+        flex-direction: column;
+        background: #34ccff; 
+        top: 0 ;
+        right:  0 ;
+        height: 100vh;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all .3s linear ;
+
+    }
+    .nav-links li a:after {
+top: 0 ; 
+
+left: 200px; 
+    }
+    .nav-links li:hover a:after{
+left: 0; 
+    }
+    .burger{
+        display: block;
+        z-index: 1;
+        background-color: rgba(63, 88, 141, 0.719);
+        padding: 10px;
+        cursor: pointer;   
+        border-radius: 5px;
+    }
+    .active-nav {
+        transform: translateX(0%);
+    }
+
+    .info h1{
+        font-size: 1rem;
+    }
+    .info p{
+        font-size: 12px;
+    }
+}
